@@ -1,0 +1,109 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  href: string;
+  tags?: string[];
+}
+
+const projects: Project[] = [
+  {
+    title: "Invio",
+    description: "Self-hosted invoicing without the bloat. Fast, transparent, and fully yours.",
+    href: "/blog",
+    tags: ["Deno", "Fresh", "Billing"],
+  },
+  {
+    title: "KittenGames",
+    description: "Clean unblocked games website, built with simplicity in mind.",
+    href: "#",
+    tags: ["Next.js", "Caddy", "Games"],
+  },
+  {
+    title: "HyStore",
+    description: "Alstore repository browser for sideloading on iOS devices.",
+    href: "/about",
+    tags: ["Expo", "Sideloading"],
+  },
+];
+---
+
+<section class="projects">
+  <div class="projects__inner">
+    <div class="projects__header">
+      <h2>Projects</h2>
+      <p class="projects__lead">These are some projects I've recently built.</p>
+    </div>
+    <div class="projects__grid">
+      {projects.map((p) => (
+        <a class="card" href={p.href} rel="noopener noreferrer">
+          <div class="card__body">
+            <h3 class="card__title">{p.title}</h3>
+            <p class="card__desc">{p.description}</p>
+            {p.tags && (
+              <div class="card__tags">
+                {p.tags.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+  
+</section>
+
+<style>
+  .projects { padding: 1rem 1rem 3rem; }
+  .projects__inner { max-width: 1100px; margin: 0 auto; }
+  .projects__header { text-align: center; margin-bottom: 1.25rem; }
+  .projects__lead { color: rgb(var(--gray-dark)); margin: .25rem auto 0; }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    grid-column: span 4;
+    display: block;
+  background: rgb(var(--gray-light));
+  border: 1px solid rgba(var(--gray), 0.12);
+  border-radius: 14px;
+  box-shadow: var(--box-shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .2s ease;
+    will-change: transform;
+    overflow: hidden;
+    animation: fadeUp .7s ease both;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(var(--gray), 0.28);
+  border-color: rgba(var(--gray), 0.28);
+  }
+  .card__body { padding: 1rem; }
+  .card__title { margin: 0 0 .35rem 0; font-size: 1.1rem; }
+  .card__desc { margin: 0 0 .75rem 0; color: rgb(var(--gray-dark)); font-size: .98rem; }
+  .card__tags { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .tag {
+    display: inline-flex;
+    padding: .2rem .5rem;
+    border-radius: 999px;
+  background: rgba(var(--gray-light), .6);
+  border: 1px solid rgba(var(--gray), .12);
+  font-size: .75rem;
+  color: rgb(var(--gray-dark));
+  }
+
+  @media (max-width: 1024px) { .card { grid-column: span 6; } }
+  @media (max-width: 640px) { .card { grid-column: span 12; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { animation: none; }
+    .card, .card:hover { transform: none; box-shadow: none; }
+  }
+</style>

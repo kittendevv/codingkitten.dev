@@ -1,0 +1,213 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+	/* Catppuccin - Latte (light) as default */
+	--cp-rosewater: #dc8a78;
+	--cp-flamingo: #dd7878;
+	--cp-pink: #ea76cb;
+	--cp-mauve: #8839ef;
+	--cp-red: #d20f39;
+	--cp-maroon: #e64553;
+	--cp-peach: #fe640b;
+	--cp-yellow: #df8e1d;
+	--cp-green: #40a02b;
+	--cp-teal: #179299;
+	--cp-sky: #04a5e5;
+	--cp-sapphire: #209fb5;
+	--cp-blue: #1e66f5;
+	--cp-lavender: #7287fd;
+
+	/* Mapped tokens used by the site (numbers kept where rgb(var(--...)) is expected) */
+	--accent: var(--cp-blue);
+	--accent-dark: #163fdf;
+	--black: 28, 29, 36; /* headings (rgb) */
+	--gray: 124, 129, 168; /* mid gray used in shadows and overlays */
+	--gray-light: 238, 241, 245; /* light surface */
+	--gray-dark: 76, 79, 105; /* body text */
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--box-shadow: 0 2px 6px rgba(var(--gray), 0.25), 0 8px 24px rgba(var(--gray), 0.33), 0 16px 32px rgba(var(--gray), 0.33);
+}
+
+/* Dark theme: Catppuccin Mocha */
+[data-theme="mocha"] {
+	--cp-rosewater: #f5e0dc;
+	--cp-flamingo: #f2cdcd;
+	--cp-pink: #f5c2e7;
+	--cp-mauve: #cba6f7;
+	--cp-red: #f38ba8;
+	--cp-maroon: #eba0ac;
+	--cp-peach: #fab387;
+	--cp-yellow: #f9e2af;
+	--cp-green: #a6e3a1;
+	--cp-teal: #94e2d5;
+	--cp-sky: #89dceb;
+	--cp-sapphire: #74c7ec;
+	--cp-blue: #89b4fa;
+	--cp-lavender: #b4befe;
+
+	--accent: var(--cp-blue);
+	--accent-dark: #6c8cff;
+	--black: 205, 214, 244; /* lighter heading color for dark bg */
+	--gray: 138, 143, 183;
+	--gray-light: 39, 38, 49;
+	--gray-dark: 204, 214, 244; /* body text */
+	--gray-gradient: rgba(var(--gray-light), 20%), rgba(20,20,25,0.05);
+	--box-shadow: 0 2px 6px rgba(10, 10, 15, 0.45), 0 8px 24px rgba(10, 10, 15, 0.5);
+}
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+body {
+	font-family: "Atkinson", sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	/* Use a solid, theme-aware background color and a very subtle overlay instead of a large gradient */
+	background-color: rgb(var(--gray-light));
+	background-image: linear-gradient(to bottom, rgba(var(--gray), 0.03), transparent);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: rgb(var(--gray-dark));
+	font-size: 20px;
+	line-height: 1.7;
+}
+main {
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	color: rgb(var(--black));
+	line-height: 1.2;
+}
+h1 {
+	font-size: 3.052em;
+}
+h2 {
+	font-size: 2.441em;
+}
+h3 {
+	font-size: 1.953em;
+}
+h4 {
+	font-size: 1.563em;
+}
+h5 {
+	font-size: 1.25em;
+}
+strong,
+b {
+	font-weight: 700;
+}
+a {
+	color: var(--accent);
+}
+a:hover {
+	color: var(--accent);
+}
+p {
+	margin-bottom: 1em;
+}
+.prose p {
+	margin-bottom: 2em;
+}
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+input {
+	font-size: 16px;
+}
+table {
+	width: 100%;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+/* card/panel surfaces derive from theme surface token */
+.card, .panel {
+	background: rgb(var(--gray-light));
+	box-shadow: var(--box-shadow);
+}
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--gray-light));
+	border-radius: 2px;
+}
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code {
+	all: unset;
+}
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(8px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+	main {
+		padding: 1em;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}

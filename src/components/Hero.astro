@@ -1,0 +1,95 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">{SITE_TITLE}</p>
+    <h1 class="hero__title">
+      Making the web a little more pawsome.
+    </h1>
+    <p class="hero__subtitle">
+      {SITE_DESCRIPTION}
+    </p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary" href="/blog">Read the blog</a>
+      <a class="btn btn--ghost" href="/about">About me</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 9rem 1rem 4.5rem;
+    background: linear-gradient(180deg, rgba(var(--gray-light), 0.35), transparent);
+  }
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 1100px;
+    text-align: center;
+  }
+  .hero__eyebrow {
+    margin: 0 0 .5rem 0;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: .9rem;
+  }
+  .hero__title {
+    font-size: clamp(2.75rem, 7.5vw, 4.25rem);
+    line-height: 1.1;
+    margin: 0 0 0.6rem 0;
+    color: rgb(var(--black));
+  }
+  .hero__subtitle {
+    margin: 0 auto 1.5rem;
+    max-width: 70ch;
+    color: rgb(var(--gray-dark));
+    font-size: clamp(1.05rem, 2.1vw, 1.25rem);
+  }
+  .hero__ctas {
+    display: inline-flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .9rem 1.2rem;
+    border-radius: 10px;
+  border: 1px solid rgba(var(--gray), 0.15);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    will-change: transform;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--gray), 0.18);
+  }
+  .btn--primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .btn--primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .btn--ghost {
+    background: rgb(var(--gray-light));
+    color: rgb(var(--black));
+  }
+
+  /* Subtle load-in animation */
+  .hero__inner { animation: fadeUp .6s ease-out both; }
+
+  @media (max-width: 720px) {
+    .hero { padding: 6.5rem 1rem 3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__inner { animation: none; }
+    .btn, .btn:hover { transform: none; box-shadow: none; }
+  }
+</style>
