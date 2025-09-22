@@ -22,3 +22,5 @@ Another thing I wanted to avoid with this project is <abbr title="Software as a 
 After coming up with these core values I moved on to figuring out what I moved onto how, what tech stack was I going to choose, how should the backend be mapped out etc. For the tech stack I chose Deno + Hono + Fresh, I chose this because I wanted a modern tech stack but also one that I could easily learn.
 
 You can check out the project here [Invio](https://github.com/kittendevv/Invio)
+
+That's all, thanks for reading!
