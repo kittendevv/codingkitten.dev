@@ -71,11 +71,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     box-shadow: 0 6px 20px rgba(var(--gray), 0.18);
   }
   .btn--primary {
-    background: var(--accent);
+    /* Use the darker accent for better contrast, keep text white for legibility */
+    background: var(--accent-dark);
     color: white;
-    border-color: var(--accent);
+    border-color: var(--accent-dark);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
   }
-  .btn--primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .btn--primary:hover {
+    filter: brightness(0.92);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+  }
+
+  .btn--primary:focus {
+    outline: 3px solid rgba(255,255,255,0.12);
+    outline-offset: 3px;
+  }
   .btn--ghost {
     background: rgb(var(--gray-light));
     color: rgb(var(--black));

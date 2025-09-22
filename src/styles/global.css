@@ -22,8 +22,8 @@
 	--cp-lavender: #7287fd;
 
 	/* Mapped tokens used by the site (numbers kept where rgb(var(--...)) is expected) */
-	--accent: var(--cp-blue);
-	--accent-dark: #163fdf;
+	--accent: var(--cp-peach);
+	--accent-dark: #c24f09;
 	--black: 28, 29, 36; /* headings (rgb) */
 	--gray: 124, 129, 168; /* mid gray used in shadows and overlays */
 	--gray-light: 238, 241, 245; /* light surface */
@@ -49,8 +49,8 @@
 	--cp-blue: #89b4fa;
 	--cp-lavender: #b4befe;
 
-	--accent: var(--cp-blue);
-	--accent-dark: #6c8cff;
+	--accent: var(--cp-peach);
+	--accent-dark: #c99667;
 	--black: 205, 214, 244; /* lighter heading color for dark bg */
 	--gray: 138, 143, 183;
 	--gray-light: 39, 38, 49;
@@ -130,10 +130,10 @@ a:hover {
 	color: var(--accent);
 }
 p {
-	margin-bottom: 1em;
+	margin-bottom: 0.85em;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1.15em;
 }
 textarea {
 	width: 100%;
@@ -161,8 +161,8 @@ code {
 	border-radius: 2px;
 }
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	padding: 1em;
+	border-radius: 6px;
 }
 pre > code {
 	all: unset;
@@ -173,13 +173,14 @@ pre > code {
 }
 blockquote {
 	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
+	padding: 0 0 0 16px;
+	margin: 0px 0 0.5em 0;
+	font-size: 1.15em;
 }
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
+	margin: 0.75em 0;
 }
 @media (max-width: 720px) {
 	body {

@@ -1,0 +1,1 @@
+{"rule":"EN_A_VS_AN","sentence":"^\\QThe end goal of the project is to collect enough patterns to train a ML model that can catch the difference between human made randomness and computer generated randomness.\\E$"}

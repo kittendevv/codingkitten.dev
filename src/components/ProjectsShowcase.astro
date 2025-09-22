@@ -14,12 +14,6 @@ const projects: Project[] = [
     tags: ["Deno", "Fresh", "Billing"],
   },
   {
-    title: "KittenGames",
-    description: "Clean unblocked games website, built with simplicity in mind.",
-    href: "#",
-    tags: ["Next.js", "Caddy", "Games"],
-  },
-  {
     title: "HyStore",
     description: "Alstore repository browser for sideloading on iOS devices.",
     href: "/about",
@@ -63,16 +57,15 @@ const projects: Project[] = [
 
   .projects__grid {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
   }
   .card {
-    grid-column: span 4;
     display: block;
   background: rgb(var(--gray-light));
-  border: 1px solid rgba(var(--gray), 0.12);
-  border-radius: 14px;
-  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(var(--gray), 0.08);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(var(--gray), 0.08);
     text-decoration: none;
     color: inherit;
     transition: transform .25s ease, box-shadow .25s ease, border-color .2s ease;
@@ -82,25 +75,24 @@ const projects: Project[] = [
   }
   .card:hover {
     transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(var(--gray), 0.28);
-  border-color: rgba(var(--gray), 0.28);
+  box-shadow: 0 10px 28px rgba(var(--gray), 0.12);
+  border-color: color-mix(in srgb, var(--accent) 20%, rgba(var(--gray), 0.12));
   }
   .card__body { padding: 1rem; }
-  .card__title { margin: 0 0 .35rem 0; font-size: 1.1rem; }
-  .card__desc { margin: 0 0 .75rem 0; color: rgb(var(--gray-dark)); font-size: .98rem; }
+  .card__title { margin: 0 0 .35rem 0; font-size: 1.05rem; }
+  .card__desc { margin: 0 0 .6rem 0; color: rgb(var(--gray-dark)); font-size: .96rem; }
   .card__tags { display: flex; gap: .5rem; flex-wrap: wrap; }
   .tag {
     display: inline-flex;
-    padding: .2rem .5rem;
+    padding: .18rem .5rem;
     border-radius: 999px;
-  background: rgba(var(--gray-light), .6);
-  border: 1px solid rgba(var(--gray), .12);
+  background: color-mix(in srgb, var(--accent) 8%, rgb(var(--gray-light)) 92%);
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, rgba(var(--gray), .08));
   font-size: .75rem;
-  color: rgb(var(--gray-dark));
+  color: var(--accent-dark);
   }
 
-  @media (max-width: 1024px) { .card { grid-column: span 6; } }
-  @media (max-width: 640px) { .card { grid-column: span 12; } }
+  @media (max-width: 640px) { .card { grid-column: span 1; } }
 
   @media (prefers-reduced-motion: reduce) {
     .card { animation: none; }

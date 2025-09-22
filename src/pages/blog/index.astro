@@ -15,21 +15,21 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} - Blog`} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 820px;
 			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				gap: 1rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
-				width: calc(50% - 1rem);
+				width: calc(33.333% - 0.66rem);
 			}
 			ul li * {
 				text-decoration: none;
@@ -42,13 +42,20 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul li:first-child img {
 				width: 100%;
+				border-radius: 10px;
 			}
 			ul li:first-child .title {
-				font-size: 2.369rem;
+				font-size: 1.8rem;
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 12px;
+				border-radius: 10px;
+				/* enforce 16:10 aspect ratio for thumbnails */
+				aspect-ratio: 16 / 10;
+				width: 100%;
+				height: auto;
+				max-height: 320px;
+				object-fit: cover;
 			}
 			ul li a {
 				display: block;
@@ -96,7 +103,7 @@ const posts = (await getCollection('blog')).sort(
 							<li>
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										<Image width={720} height={450} src={post.data.heroImage} alt="" />
 									)}
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
