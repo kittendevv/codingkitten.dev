@@ -80,26 +80,39 @@ const others: Project[] = mapped.filter((p) => !p.featured).slice(0, limit);
 </section>
 
 <style>
-  .projects { padding: 0.6rem 0.5rem 1.25rem; }
-  .projects__inner { max-width: 760px; margin: 0 auto; padding-top: 0.25rem; }
-  .projects__header { text-align: left; margin-bottom: .75rem; }
+  .projects { padding: 0.6rem 0.75rem 1.5rem; }
+  .projects__inner { max-width: 860px; margin: 0 auto; padding-top: 0.25rem; }
+  .projects__header { text-align: left; margin-bottom: .85rem; }
   .projects__header h2 { margin: 0 0 .25rem 0; }
-  .projects__lead { color: rgb(var(--gray-dark)); margin: 0 0 0.5rem 0; max-width: 60ch; }
+  .projects__lead { color: rgb(var(--gray-dark)); margin: 0 0 0.6rem 0; max-width: 60ch; }
+
+  /* Highlights: two-column on medium+, stack on small */
+  .projects__highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    margin-bottom: .75rem;
+  }
+
+  @media (min-width: 640px) {
+    .projects__highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
 
   .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: .35rem;
+    gap: .5rem;
   }
 
   /* CTA row */
   .projects__cta {
     display: flex;
     justify-content: center;
-    margin-top: .75rem;
+    margin-top: 1rem;
   }
-  
+
   @media (max-width: 640px) {
     .projects__header { text-align: center; }
+    .projects__cta .btn { width: 100%; max-width: 460px; text-align: center; justify-content: center; }
   }
 </style>

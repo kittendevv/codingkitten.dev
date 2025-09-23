@@ -105,6 +105,18 @@ main {
 	padding: 3em 1em;
 }
 
+/* Site-wide container utility */
+.container {
+	width: 720px;
+	max-width: calc(100% - 2rem);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 960px) {
+	.container { width: 860px; }
+}
+
 h1,
 h2,
 h3,

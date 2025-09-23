@@ -17,18 +17,18 @@ const others = mapped.filter((p) => !p.featured);
   </head>
   <body>
     <Header />
-    <main style="max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;">
+  <main class="projects-page container">
       <h1>Projects</h1>
       <p>These are some of my notable projects.</p>
       <!-- Render project cards directly on the Projects page -->
       {highlights.length > 0 && (
-        <div>
+        <div class="projects-page__highlights">
           {highlights.map((p) => (
             <ProjectCard project={p} highlight={true} />
           ))}
         </div>
       )}
-      <div style="margin-top: .5rem;">
+      <div class="projects-page__grid">
         {others.map((p) => (
           <ProjectCard project={p} />
         ))}
@@ -38,17 +38,25 @@ const others = mapped.filter((p) => !p.featured);
           href="https://github.com/kittendevv"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn"
+          class="btn btn--ghost"
           data-umami-event="projects_visit_github"
         >
           Explore my GitHub
         </a>
       </div>
       <style>
+        .projects-page__highlights { display: grid; grid-template-columns: 1fr; gap: .5rem; margin: .5rem 0 .75rem; }
+        @media (min-width: 640px) { .projects-page__highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+        .projects-page__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; }
+
         .projects-page__cta {
           display: flex;
           justify-content: center;
           margin-top: 1rem;
+        }
+        @media (max-width: 640px) {
+          .projects-page__cta .btn { width: 100%; max-width: 460px; text-align: center; justify-content: center; }
         }
       </style>
     </main>
