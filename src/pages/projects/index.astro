@@ -17,13 +17,9 @@ const others = mapped.filter((p) => !p.featured);
   </head>
   <body>
     <Header />
-    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <main style="max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;">
       <h1>Projects</h1>
       <p>These are some of my notable projects.</p>
-      <style>
-        .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1rem; border-radius:10px; border:1px solid rgba(var(--gray),0.15); text-decoration:none; font-weight:600; }
-        .btn--ghost { background: rgb(var(--gray-light)); color: rgb(var(--black)); }
-      </style>
       <!-- Render project cards directly on the Projects page -->
       {highlights.length > 0 && (
         <div>
@@ -32,14 +28,29 @@ const others = mapped.filter((p) => !p.featured);
           ))}
         </div>
       )}
-      <div style="margin-top: .6rem;">
+      <div style="margin-top: .5rem;">
         {others.map((p) => (
           <ProjectCard project={p} />
         ))}
       </div>
-        <div style="display:flex; justify-content:center; margin-top: 1.25rem;">
-          <a href="https://github.com/kittendevv" rel="noopener noreferrer" class="btn btn--ghost">Visit my GitHub</a>
-        </div>
+      <div class="projects-page__cta">
+        <a
+          href="https://github.com/kittendevv"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+          data-umami-event="projects_visit_github"
+        >
+          Explore my GitHub
+        </a>
+      </div>
+      <style>
+        .projects-page__cta {
+          display: flex;
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      </style>
     </main>
     <Footer />
   </body>

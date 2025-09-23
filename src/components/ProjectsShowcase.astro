@@ -70,7 +70,9 @@ const others: Project[] = mapped.filter((p) => !p.featured).slice(0, limit);
     )}
     {!showAll && (
       <div class="projects__cta">
-        <a href="/projects" class="btn btn--ghost">View all projects</a>
+        <a class="btn btn--ghost" href="/projects" data-umami-event="home_view_all_projects">
+          Browse all projects →
+        </a>
       </div>
     )}
   </div>
@@ -91,10 +93,12 @@ const others: Project[] = mapped.filter((p) => !p.featured).slice(0, limit);
   }
 
   /* CTA row */
-  .projects__cta { display: flex; justify-content: center; margin-top: .9rem; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: 10px; border: 1px solid rgba(var(--gray), 0.15); text-decoration: none; font-weight: 600; }
-  .btn--ghost { background: rgb(var(--gray-light)); color: rgb(var(--black)); }
-
+  .projects__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: .75rem;
+  }
+  
   @media (max-width: 640px) {
     .projects__header { text-align: center; }
   }

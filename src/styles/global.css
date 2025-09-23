@@ -24,10 +24,14 @@
 	/* Mapped tokens used by the site (numbers kept where rgb(var(--...)) is expected) */
 	--accent: var(--cp-peach);
 	--accent-dark: #c24f09;
-	--black: 28, 29, 36; /* headings (rgb) */
-	--gray: 124, 129, 168; /* mid gray used in shadows and overlays */
-	--gray-light: 238, 241, 245; /* light surface */
-	--gray-dark: 76, 79, 105; /* body text */
+	--black: 28, 29, 36;
+	/* headings (rgb) */
+	--gray: 124, 129, 168;
+	/* mid gray used in shadows and overlays */
+	--gray-light: 238, 241, 245;
+	/* light surface */
+	--gray-dark: 76, 79, 105;
+	/* body text */
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 0.25), 0 8px 24px rgba(var(--gray), 0.33), 0 16px 32px rgba(var(--gray), 0.33);
 }
@@ -51,13 +55,16 @@
 
 	--accent: var(--cp-peach);
 	--accent-dark: #c99667;
-	--black: 205, 214, 244; /* lighter heading color for dark bg */
+	--black: 205, 214, 244;
+	/* lighter heading color for dark bg */
 	--gray: 138, 143, 183;
 	--gray-light: 39, 38, 49;
-	--gray-dark: 204, 214, 244; /* body text */
-	--gray-gradient: rgba(var(--gray-light), 20%), rgba(20,20,25,0.05);
+	--gray-dark: 204, 214, 244;
+	/* body text */
+	--gray-gradient: rgba(var(--gray-light), 20%), rgba(20, 20, 25, 0.05);
 	--box-shadow: 0 2px 6px rgba(10, 10, 15, 0.45), 0 8px 24px rgba(10, 10, 15, 0.5);
 }
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -65,6 +72,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-bold.woff") format("woff");
@@ -72,6 +80,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 body {
 	font-family: "Atkinson", sans-serif;
 	margin: 0;
@@ -88,12 +97,14 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
+
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
 }
+
 h1,
 h2,
 h3,
@@ -104,95 +115,129 @@ h6 {
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
+
 h1 {
 	font-size: 3.052em;
 }
+
 h2 {
 	font-size: 2.441em;
 }
+
 h3 {
 	font-size: 1.953em;
 }
+
 h4 {
 	font-size: 1.563em;
 }
+
 h5 {
 	font-size: 1.25em;
 }
+
 strong,
 b {
 	font-weight: 700;
 }
+
 a {
 	color: var(--accent);
 }
+
 a:hover {
 	color: var(--accent);
 }
+
 p {
 	margin-bottom: 0.85em;
 }
+
 .prose p {
 	margin-bottom: 1.15em;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
 table {
 	width: 100%;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;
 }
+
 /* card/panel surfaces derive from theme surface token */
-.card, .panel {
+.card,
+.panel {
 	background: rgb(var(--gray-light));
 	box-shadow: var(--box-shadow);
 }
+
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
 }
+
 pre {
 	padding: 1em;
 	border-radius: 6px;
 }
-pre > code {
+
+pre>code {
 	all: unset;
 }
+
 @keyframes fadeUp {
-	from { opacity: 0; transform: translateY(8px); }
-	to { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 16px;
 	margin: 0px 0 0.5em 0;
 	font-size: 1.15em;
 }
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 	margin: 0.75em 0;
 }
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
+
 	main {
 		padding: 1em;
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	* { animation: none !important; transition: none !important; }
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
 }
 
 .sr-only {
@@ -211,4 +256,48 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Buttons — matches hero primary CTA */
+.cta {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	padding: .55rem .9rem;
+	border-radius: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--accent);
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	border: 1px solid color-mix(in srgb, var(--accent) 40%, currentColor 20%);
+	transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+	background: color-mix(in srgb, var(--accent) 16%, transparent);
+	outline: none;
+}
+
+.btn:active {
+	transform: translateY(1px);
+}
+
+/* Ghost variant */
+.btn--ghost {
+	color: var(--accent);
+	background: transparent;
+	border: 1px solid color-mix(in srgb, var(--accent) 55%, currentColor 45%);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+	background: color-mix(in srgb, var(--accent) 16%, transparent);
+	color: color-mix(in srgb, var(--accent) 85%, #000 15%);
 }
