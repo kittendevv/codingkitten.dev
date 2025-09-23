@@ -16,4 +16,22 @@ const blog = defineCollection({
 		}),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+	// Load YAML files in the `src/content/projects/` directory only.
+	// This keeps the projects collection limited to structured YAML content files.
+	loader: glob({ base: './src/content/projects', pattern: '**/*.{yml,yaml}' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			href: z.string().optional(),
+			tags: z.array(z.string()).optional(),
+			// Allow marking featured projects and an optional order for highlights
+			featured: z.boolean().optional(),
+			highlightOrder: z.number().int().optional(),
+			// optional image
+			image: image().optional(),
+		}),
+});
+
+export const collections = { blog, projects };

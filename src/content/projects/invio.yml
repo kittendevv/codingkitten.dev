@@ -1,0 +1,9 @@
+title: "Invio"
+description: "Self-hosted invoicing without the bloat. Fast, transparent, and fully yours."
+href: "https://invio.codingkitten.dev/"
+tags:
+  - Deno
+  - Fresh
+  - Billing
+featured: true
+highlightOrder: 1

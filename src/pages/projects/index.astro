@@ -1,0 +1,46 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const all = await getCollection('projects');
+const mapped = all.map((e) => ({ id: e.id, ...(e.data || {}) }));
+const highlights = mapped.filter((p) => !!p.featured).sort((a, b) => (a.highlightOrder || 9999) - (b.highlightOrder || 9999));
+const others = mapped.filter((p) => !p.featured);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Projects" description="All projects" />
+  </head>
+  <body>
+    <Header />
+    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+      <h1>Projects</h1>
+      <p>These are some of my notable projects.</p>
+      <style>
+        .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1rem; border-radius:10px; border:1px solid rgba(var(--gray),0.15); text-decoration:none; font-weight:600; }
+        .btn--ghost { background: rgb(var(--gray-light)); color: rgb(var(--black)); }
+      </style>
+      <!-- Render project cards directly on the Projects page -->
+      {highlights.length > 0 && (
+        <div>
+          {highlights.map((p) => (
+            <ProjectCard project={p} highlight={true} />
+          ))}
+        </div>
+      )}
+      <div style="margin-top: .6rem;">
+        {others.map((p) => (
+          <ProjectCard project={p} />
+        ))}
+      </div>
+        <div style="display:flex; justify-content:center; margin-top: 1.25rem;">
+          <a href="https://github.com/kittendevv" rel="noopener noreferrer" class="btn btn--ghost">Visit my GitHub</a>
+        </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# Astro Starter Kit: Gooners
 
 ```sh
 npm create astro@latest -- --template blog
@@ -42,7 +42,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the DICK of the project, from a terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -60,3 +60,10 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+
+SIX SEVEENNNNN
+SIX SEVEN
+SIX SEEEVEEEEN
+SIX SEEEVEEENNN
+SIX SEVENNNNe

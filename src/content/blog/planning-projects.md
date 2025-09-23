@@ -1,13 +1,13 @@
 ---
 title: 'Planning Projects (The way I do it)'
 description: 'Planning and managing projects (The way I do it)'
-pubDate: 'Sep 22 2025'
+pubDate: 'Sep 23 2025'
 heroImage: '../../assets/blog-planning-projects.jpg'
 ---
 
 ##### Do you ever find yourself on the edge of a self-imposed burnout? Well look no further because my strategy on planning projects might fix it.
 
-So I was on holiday, I was coming up with a ton of cool project ideas, all fun and games. But then I started to count how many project ideas I actually had, at the time I had 12 project ideas I wanted to work on all of them at the same time. And unless you have magical powers that is just not possible nor is it productive.
+So I was on holiday, I was coming up with a ton of cool project ideas, all fun and games. But then I started to count how many project ideas I actually had, at the time I had 12 project ideas I wanted to work on all of them at the same time. And unless you have magical powers that's just not possible nor is it productive.
 
 > “You can do anything, but not everything.” – David Allen
 

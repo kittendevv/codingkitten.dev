@@ -1,0 +1,71 @@
+---
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  tags: string[];
+  featured: boolean;
+  highlightOrder: number;
+};
+
+const { project, highlight = false } = Astro.props as { project: Project; highlight?: boolean };
+---
+
+<a class={"card" + (highlight ? ' card--highlight' : '')} href={project.href} rel="noopener noreferrer" aria-label={`Project ${project.title}`}>
+  <div class="card__body">
+    <h3 class="card__title">{project.title}</h3>
+    <p class="card__desc">{project.description}</p>
+    {project.tags && (
+      <div class="card__tags">
+        {project.tags.map((t) => (
+          <span class="tag">{t}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</a>
+
+<style>
+  .card {
+    display: block;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color .12s ease;
+    will-change: transform;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0px;
+    background: var(--accent);
+    transition: width .14s ease;
+  }
+  .card:hover::before { width: 4px; }
+
+  .card__body { padding: .5rem .6rem; }
+  .card__title { margin: 0 0 .12rem 0; font-size: 1.03rem; font-weight: 600; }
+  .card__desc { margin: 0 0 .35rem 0; color: rgb(var(--gray-dark)); font-size: .92rem; line-height: 1.32; opacity: 0.95; }
+
+  .card__tags { display: flex; gap: .25rem; flex-wrap: wrap; }
+  .tag { display: inline-flex; padding: .1rem .4rem; border-radius: 999px; background: transparent; border: 1px solid rgba(var(--gray), 0.06); font-size: .7rem; color: rgb(var(--gray-dark)); }
+
+  .card--highlight .card__body { padding: .6rem .6rem; }
+  .card--highlight .card__title { font-size: 1.12rem; font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .card__body { padding: .6rem; }
+    .card--highlight .card__title { font-size: 1.02rem; }
+  }
+</style>

@@ -1,25 +1,49 @@
 ---
-interface Project {
+// ProjectsShowcase now loads projects from the `projects` content collection.
+// It supports multiple highlighted projects (featured=true). Highlights are
+// ordered by `highlightOrder` ascending. The rest are shown in the grid.
+// You can pass an optional `limit` prop to limit the number of non-highlighted projects.
+
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+
+type RawProject = {
+  id: string;
+  data: any;
+};
+
+type Project = {
+  id: string;
   title: string;
   description: string;
   href: string;
-  tags?: string[];
-}
+  tags: string[];
+  featured: boolean;
+  highlightOrder: number;
+};
 
-const projects: Project[] = [
-  {
-    title: "Invio",
-    description: "Self-hosted invoicing without the bloat. Fast, transparent, and fully yours.",
-    href: "/blog",
-    tags: ["Deno", "Fresh", "Billing"],
-  },
-  {
-    title: "HyStore",
-    description: "Alstore repository browser for sideloading on iOS devices.",
-    href: "/about",
-    tags: ["Expo", "Sideloading"],
-  },
-];
+const props = Astro.props as { limit?: number; showAll?: boolean };
+const limit: number = props.limit ?? 6;
+const showAll: boolean = !!props.showAll;
+
+const all = (await getCollection('projects')) as RawProject[];
+
+// Map entries to a simpler shape and attach id
+const mapped: Project[] = all.map((e) => ({
+  id: e.id,
+  title: e.data.title ?? '',
+  description: e.data.description ?? '',
+  href: e.data.href ?? '#',
+  tags: (e.data.tags ?? []) as string[],
+  featured: !!e.data.featured,
+  highlightOrder: typeof e.data.highlightOrder === 'number' ? e.data.highlightOrder : 9999,
+}));
+
+// Only include featured projects in highlights. Non-featured projects are
+// treated as "others" but will only be rendered when `showAll` is true.
+const highlights: Project[] = mapped.filter((p) => p.featured).sort((a, b) => a.highlightOrder - b.highlightOrder);
+const others: Project[] = mapped.filter((p) => !p.featured).slice(0, limit);
+
 ---
 
 <section class="projects">
@@ -28,74 +52,50 @@ const projects: Project[] = [
       <h2>Projects</h2>
       <p class="projects__lead">These are some projects I've recently built.</p>
     </div>
-    <div class="projects__grid">
-      {projects.map((p) => (
-        <a class="card" href={p.href} rel="noopener noreferrer">
-          <div class="card__body">
-            <h3 class="card__title">{p.title}</h3>
-            <p class="card__desc">{p.description}</p>
-            {p.tags && (
-              <div class="card__tags">
-                {p.tags.map((t) => (
-                  <span class="tag">{t}</span>
-                ))}
-              </div>
-            )}
-          </div>
-        </a>
-      ))}
-    </div>
+
+    {highlights.length > 0 && (
+      <div class="projects__highlights">
+        {highlights.map((p) => (
+          <ProjectCard project={p} highlight={true} />
+        ))}
+      </div>
+    )}
+
+    {showAll && (
+      <div class="projects__grid">
+        {others.map((p) => (
+          <ProjectCard project={p} />
+        ))}
+      </div>
+    )}
+    {!showAll && (
+      <div class="projects__cta">
+        <a href="/projects" class="btn btn--ghost">View all projects</a>
+      </div>
+    )}
   </div>
-  
+
 </section>
 
 <style>
-  .projects { padding: 1rem 1rem 3rem; }
-  .projects__inner { max-width: 1100px; margin: 0 auto; }
-  .projects__header { text-align: center; margin-bottom: 1.25rem; }
-  .projects__lead { color: rgb(var(--gray-dark)); margin: .25rem auto 0; }
+  .projects { padding: 0.6rem 0.5rem 1.25rem; }
+  .projects__inner { max-width: 760px; margin: 0 auto; padding-top: 0.25rem; }
+  .projects__header { text-align: left; margin-bottom: .75rem; }
+  .projects__header h2 { margin: 0 0 .25rem 0; }
+  .projects__lead { color: rgb(var(--gray-dark)); margin: 0 0 0.5rem 0; max-width: 60ch; }
 
   .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-  .card {
-    display: block;
-  background: rgb(var(--gray-light));
-  border: 1px solid rgba(var(--gray), 0.08);
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(var(--gray), 0.08);
-    text-decoration: none;
-    color: inherit;
-    transition: transform .25s ease, box-shadow .25s ease, border-color .2s ease;
-    will-change: transform;
-    overflow: hidden;
-    animation: fadeUp .7s ease both;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(var(--gray), 0.12);
-  border-color: color-mix(in srgb, var(--accent) 20%, rgba(var(--gray), 0.12));
-  }
-  .card__body { padding: 1rem; }
-  .card__title { margin: 0 0 .35rem 0; font-size: 1.05rem; }
-  .card__desc { margin: 0 0 .6rem 0; color: rgb(var(--gray-dark)); font-size: .96rem; }
-  .card__tags { display: flex; gap: .5rem; flex-wrap: wrap; }
-  .tag {
-    display: inline-flex;
-    padding: .18rem .5rem;
-    border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 8%, rgb(var(--gray-light)) 92%);
-  border: 1px solid color-mix(in srgb, var(--accent) 16%, rgba(var(--gray), .08));
-  font-size: .75rem;
-  color: var(--accent-dark);
+    gap: .35rem;
   }
 
-  @media (max-width: 640px) { .card { grid-column: span 1; } }
+  /* CTA row */
+  .projects__cta { display: flex; justify-content: center; margin-top: .9rem; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: 10px; border: 1px solid rgba(var(--gray), 0.15); text-decoration: none; font-weight: 600; }
+  .btn--ghost { background: rgb(var(--gray-light)); color: rgb(var(--black)); }
 
-  @media (prefers-reduced-motion: reduce) {
-    .card { animation: none; }
-    .card, .card:hover { transform: none; box-shadow: none; }
+  @media (max-width: 640px) {
+    .projects__header { text-align: center; }
   }
 </style>
