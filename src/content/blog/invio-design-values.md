@@ -1,6 +1,6 @@
 ---
 title: 'Invio design values.'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+description: 'My design choices and UX consideratiions for Invio'
 pubDate: 'Sep 22 2025'
 heroImage: '../../assets/blog-invio-design-values.png'
 ---
