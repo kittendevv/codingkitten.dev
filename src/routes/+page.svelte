@@ -13,6 +13,7 @@
 			<Searchbar />
 			<Navcard title="Blog" destination="/blog" cols="col-span-2" />
 			<Themecard />
+			
 			<!-- Row 2 -->
 			<Githubcard />
 			<Navcard title="Coding Projects" destination="/" cols="col-span-2" />

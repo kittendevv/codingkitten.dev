@@ -1,6 +1,6 @@
 ---
 title: 'Human Randomness'
-date: 'Sep 21 2025'
+date: '2025-09-21'
 ---
 
 Have you ever wondered about how random humans are? Well I have and even turned this thought into a hobby research project. (It is not finished yet). This blog post is about human randomness, and how not random we humans really are.
@@ -10,6 +10,7 @@ Most people believe that we are terrible at randomness and that instead of gener
 Luckily I'm not the only person instrested in this subject, today we will be looking at this [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC5933241/) written by <abbr title="Division of Neuroscience and Experimental Psychology, School of Biological Sciences, Faculty of Biology, Medicine, and Health, Manchester Academic Health Science Centre, University of Manchester">Paul A Warren</abbr>, and this [article](https://en.wikipedia.org/wiki/Gambler%27s_fallacy) from Wikipedia about Gambler's fallacy.
 
 Humans do not have infinite cognitive capacity, for randomness this means we do not notice the entirety of it just small chunks, we are limited by memory and attention, this is called the sliding window concept, we only observe a finite stream of outcomes, our attention only covers the current event plus a few previous ones.
+
 > What may appear as bias could instead reflect how randomness is actually experienced given human cognitive constraints.
 
 The 2 experiments the paper write about lead to these key findings:
