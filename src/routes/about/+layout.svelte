@@ -4,7 +4,7 @@
 	let { children } = $props();
 </script>
 
-<Navrow destination="/blog" pagetitle={page.data.title ?? 'Blog Post'} />
+<Navrow destination="/" pagetitle={page.data.title ?? 'Blog Post'} />
 
 <div class="mx-auto prose max-w-5xl p-8 prose-invert">
 	{@render children()}
