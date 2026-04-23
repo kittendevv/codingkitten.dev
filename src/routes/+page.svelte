@@ -16,7 +16,7 @@
 
 			<!-- Row 2 -->
 			<Githubcard />
-			<Navcard title="Coding Projects" destination="/" cols="col-span-2" />
+			<Navcard title="Coding Projects" destination="/projects" cols="col-span-2" />
 			<Navcard title="Other Projects" destination="/" cols="col-span-2" />
 			<Navcard title="About me" destination="/about" cols="col-span-2" />
 
