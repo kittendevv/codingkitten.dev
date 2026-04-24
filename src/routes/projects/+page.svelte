@@ -1,19 +1,13 @@
 <script lang="ts">
-	import Navrow from '$lib/widgets/navrow.svelte';
-	import Projectcard from '$lib/widgets/projects/projectcard.svelte';
+	const { data } = $props();
 
-	let projects = [
-		{ title: 'Invio', description: 'Selfhosted invoicing software without feature bloat.' },
-		{ title: 'Keisoku', description: 'Easily measure stats without staying up to date on api changes.' },
-		{ title: 'Anketo', description: 'Write beatiful forms and surveys in plain text.' }
-	];
+	import Navrow from '$lib/widgets/navrow.svelte';
+	import Invio from '$lib/widgets/projects/invio.svelte';
 </script>
 
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Coding Projects" />
-	<div class="m-2 grid grid-cols-3 gap-2">
-		{#each projects as project (project.title)}
-			<Projectcard title={project.title} description={project.description} cols="col-span-1" />
-		{/each}
+	<div class="m-2 grid grid-cols-2 gap-2">
+		<Invio stats={data} cols="col-span-1" />
 	</div>
 </div>
