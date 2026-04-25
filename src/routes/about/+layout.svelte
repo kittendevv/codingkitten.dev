@@ -6,6 +6,6 @@
 
 <Navrow destination="/" pagetitle={page.data.title ?? 'Blog Post'} />
 
-<div class="mx-auto prose max-w-5xl p-8 prose-invert">
+<div class="mx-auto prose max-w-5xl pb-8 prose-invert">
 	{@render children()}
 </div>

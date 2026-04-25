@@ -17,7 +17,9 @@ export const getSearchIndex = (): SearchResult[] => {
 
 	const projects: SearchResult[] = [
 		{ title: 'Invio', description: 'Free and open source invoicing software', destination: '/projects', type: 'project' },
-		{ title: 'Keisoku', description: 'Lightweight central stats API', destination: '/projects', type: 'project' }
+		{ title: 'Keisoku', description: 'Lightweight central stats API', destination: '/projects', type: 'project' },
+		{ title: 'Anketo', description: 'Write forms in plain text', destination: '/projects', type: 'project' },
+		{ title: 'KittenGames', description: 'Unblocked games website', destination: '/projects', type: 'project' }
 	];
 
 	return [...posts, ...projects];
