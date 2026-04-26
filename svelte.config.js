@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 
@@ -12,9 +12,7 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter({
-			fallback: '404.html'
-		})
+		adapter: adapter()
 	},
 	vitePlugin: {
 		dynamicCompileOptions: ({ filename }) => (filename.includes('node_modules') ? undefined : { runes: true })
