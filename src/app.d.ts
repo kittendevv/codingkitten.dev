@@ -7,6 +7,16 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
+		interface Platform {
+			env: {
+				UPSTASH_REDIS_REST_URL: string;
+				UPSTASH_REDIS_REST_TOKEN: string;
+			};
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+			caches: CacheStorage & { default: Cache };
+		}
 	}
 }
 
