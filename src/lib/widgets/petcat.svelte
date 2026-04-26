@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="{cols} row-span-1 h-full w-full rounded-2xl bg-base-200">
+<div class="{cols} row-span-1 aspect-2/1 h-full w-full rounded-2xl bg-base-200">
 	<button onclick={petCat} disabled={hasPetted || isPatching || loading} class="h-full w-full cursor-pointer text-4xl disabled:cursor-default disabled:opacity-50">
 		<div class="flex items-center justify-center" bind:clientWidth={containerWidth}>
 			{#if loading}

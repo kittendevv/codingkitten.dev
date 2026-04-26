@@ -55,15 +55,15 @@
 		</div>
 		<img src="images/invio.png" alt="Invio Dashboard Screenshot" class="col-span-3 row-span-3 mt-1 rounded-lg shadow-sm shadow-base-300" />
 		<div class="col-span-2 row-span-1 mt-auto mr-auto">
-			<a href="https://github.com/kittendevv/Invio" class="btn btn-neutral">
+			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-neutral">
 				<GithubLogoIcon size={18} weight="fill" />
 				Github
 			</a>
-			<a href="https://github.com/kittendevv/Invio" class="btn btn-ghost">
+			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
 				<ReadCvLogoIcon size={18} weight="fill" />
 				Documentation
 			</a>
-			<a href="https://github.com/kittendevv/Invio" class="btn btn-ghost">
+			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
 				<ArrowSquareOutIcon size={18} weight="bold" />
 				Live Demo
 			</a>

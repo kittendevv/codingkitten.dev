@@ -33,7 +33,7 @@
 	}
 </script>
 
-<div bind:this={container} class="col-span-1 row-span-1 aspect-square rounded-2xl bg-base-200">
+<div bind:this={container} class="col-span-1 row-span-1 rounded-2xl bg-base-200">
 	<button class="h-full w-full cursor-pointer" onclick={flipTheme}>
 		<div class="flex h-full items-center justify-center text-base-content">
 			{#if isDark}
