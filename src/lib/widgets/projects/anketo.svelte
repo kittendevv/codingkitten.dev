@@ -35,14 +35,14 @@
 		</div>
 	</div>
 
-	<div class="grid grid-cols-5 gap-1">
-		<div class="col-span-2">
+	<div class="grid grid-cols-1 gap-1 md:grid-cols-5">
+		<div class="col-span-1 md:col-span-2">
 			<p class="mt-4 h-full w-full text-left font-['Space_Grotesk_Variable'] text-xl">
 				I sometimes find myself needing to make a survey for projects. Using form builders for some reason though is not a nice experience, to me atleast.
 				<br class="mb-2" />
 				That is why I started working on making a form builder that does feel intuitive (to me). Making forms in Ankēto feels like writing markdown. But the result is a beatiful fully interactive form instead of a static page.
 			</p>
 		</div>
-		<img src="images/anketo.webp" alt="Invio Dashboard Screenshot" class="col-span-3 mt-1 rounded-lg shadow-sm shadow-base-300" />
+		<img src="images/anketo.webp" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 rounded-lg shadow-sm shadow-base-300 md:col-span-3" />
 	</div>
 </div>

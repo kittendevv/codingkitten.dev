@@ -22,7 +22,7 @@
 
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Image Gallery" />
-	<div class="columns-4 gap-2 space-y-2">
+	<div class="columns-2 gap-2 space-y-2 md:columns-3 lg:columns-4">
 		{#each images as image (image.img)}
 			<Imgcard img={image.img} alt={image.alt} />
 		{/each}

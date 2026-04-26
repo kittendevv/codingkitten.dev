@@ -12,7 +12,7 @@
 	import { SiBun, SiSvelte, SiHono, SiDeno } from '@icons-pack/svelte-simple-icons';
 </script>
 
-<div class="{cols} w-full rounded-2xl bg-base-200 p-4 text-center">
+<div class="{cols} w-full rounded-2xl bg-base-200 p-4">
 	<!-- Top Row, title, stats, tech -->
 	<div class="flex items-center">
 		<!-- Title -->
@@ -39,8 +39,8 @@
 		</div>
 	</div>
 
-	<div class="grid grid-cols-5 grid-rows-3 gap-1">
-		<div class="col-span-2 row-span-2">
+	<div class="grid grid-cols-1 gap-1 md:grid-cols-5">
+		<div class="col-span-1 md:col-span-2">
 			<div class="flex items-center">
 				<StarIcon size={18} weight="bold" />
 				<h2 class="mr-2 text-xl font-medium">{stars()}</h2>
@@ -53,20 +53,20 @@
 				Invio is not meant to be a full bookkeeping solution. Just invoices, nothing else.
 			</p>
 		</div>
-		<img src="images/invio.png" alt="Invio Dashboard Screenshot" class="col-span-3 row-span-3 mt-1 rounded-lg shadow-sm shadow-base-300" />
-		<div class="col-span-2 row-span-1 mt-auto mr-auto">
-			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-neutral">
-				<GithubLogoIcon size={18} weight="fill" />
-				Github
-			</a>
-			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
-				<ReadCvLogoIcon size={18} weight="fill" />
-				Documentation
-			</a>
-			<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
-				<ArrowSquareOutIcon size={18} weight="bold" />
-				Live Demo
-			</a>
-		</div>
+		<img src="images/invio.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 rounded-lg shadow-sm shadow-base-300 md:col-span-3" />
+	</div>
+	<div class="mt-2">
+		<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-neutral">
+			<GithubLogoIcon size={18} weight="fill" />
+			Github
+		</a>
+		<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
+			<ReadCvLogoIcon size={18} weight="fill" />
+			Documentation
+		</a>
+		<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-ghost">
+			<ArrowSquareOutIcon size={18} weight="bold" />
+			Live Demo
+		</a>
 	</div>
 </div>

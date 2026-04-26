@@ -35,10 +35,10 @@
 		</div>
 	</div>
 
-	<div class="grid grid-cols-5 gap-1">
-		<div class="col-span-2">
+	<div class="grid grid-cols-1 gap-1 md:grid-cols-5">
+		<div class="col-span-1 md:col-span-2">
 			<p class="mt-4 h-full w-full text-left font-['Space_Grotesk_Variable'] text-xl">A classic web developer project (atleast I think so), my very own games website. During the few years I kept it up it became the #1 unblocked games website in my entire school.</p>
 		</div>
-		<img src="images/kittengames.png" alt="Invio Dashboard Screenshot" class="col-span-3 mt-1 rounded-lg shadow-sm shadow-base-300" />
+		<img src="images/kittengames.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 rounded-lg shadow-sm shadow-base-300 md:col-span-3" />
 	</div>
 </div>

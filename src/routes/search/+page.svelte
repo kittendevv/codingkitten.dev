@@ -6,7 +6,7 @@
 
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle={'Results for: ' + data.query} />
-	<div class="m-2 grid grid-cols-2 gap-2">
+	<div class="m-2 grid grid-cols-1 gap-2 md:grid-cols-2">
 		{#each data.results as result (result.destination)}
 			<Resultcard title={result.title} description={result.description} destination={result.destination} type={result.type} />
 		{/each}

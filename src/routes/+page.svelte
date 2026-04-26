@@ -8,7 +8,7 @@
 </script>
 
 <div class="h-screen w-full p-2">
-	<div class="grid h-full grid-cols-2 grid-rows-8 gap-2 md:grid-cols-4 lg:grid-cols-5 lg:grid-rows-3">
+	<div class="grid h-full grid-cols-2 grid-rows-none gap-2 md:grid-cols-4 lg:grid-cols-5 lg:grid-rows-3">
 		<!-- Row 1 -->
 		<Searchbar />
 		<Navcard title="Blog" subtitle="Posts about what intrests me" destination="/blog" cols="col-span-2" />
