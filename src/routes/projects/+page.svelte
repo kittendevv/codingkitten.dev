@@ -8,6 +8,10 @@
 	import Kittengames from '$lib/widgets/projects/kittengames.svelte';
 </script>
 
+<svelte:head>
+	<title>kittendevv - projects</title>
+</svelte:head>
+
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Coding Projects" />
 	<div class="m-2 grid grid-cols-1 gap-2 lg:grid-cols-2">

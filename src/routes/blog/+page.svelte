@@ -6,6 +6,10 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>kittendevv - blog</title>
+</svelte:head>
+
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Blog" />
 	<div class="m-2 grid grid-cols-3 gap-2 lg:grid-cols-6">

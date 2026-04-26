@@ -7,6 +7,10 @@
 	import Petcat from '$lib/widgets/petcat.svelte';
 </script>
 
+<svelte:head>
+	<title>kittendevv</title>
+</svelte:head>
+
 <div class="h-screen w-full p-2">
 	<div class="grid h-full grid-cols-2 grid-rows-none gap-2 md:grid-cols-4 lg:grid-cols-5 lg:grid-rows-3">
 		<!-- Row 1 -->

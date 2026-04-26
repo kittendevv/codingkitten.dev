@@ -20,6 +20,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>kittendevv - image gallery</title>
+</svelte:head>
+
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Image Gallery" />
 	<div class="columns-2 gap-2 space-y-2 md:columns-3 lg:columns-4">
