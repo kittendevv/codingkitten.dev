@@ -15,7 +15,7 @@
 <div class="h-full min-h-screen w-full">
 	<Navrow destination="/" pagetitle="Coding Projects" />
 	<div class="m-2 grid grid-cols-1 gap-2 lg:grid-cols-2">
-		<Invio stats={data} cols="col-span-1" />
+		<Invio stats={data.item} cols="col-span-1" />
 		<Anketo cols="col-span-1" />
 		<Keisoku cols="col-span-1" />
 		<Kittengames cols="col-span-1" />
