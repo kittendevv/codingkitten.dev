@@ -1,7 +1,7 @@
 <script lang="ts">
 	let { stats, cols } = $props();
 	const downloads = () => stats?.invio_total_downloads?.total?.formatted ?? '0';
-	const stars = () => stats?.invio_stars?.stars ?? '0';
+	const stars = () => stats?.invio_stars?.stars?.formatted ?? '0';
 
 	import StarIcon from 'phosphor-svelte/lib/StarIcon';
 	import DownloadSimpleIcon from 'phosphor-svelte/lib/DownloadSimpleIcon';
@@ -10,6 +10,7 @@
 	import ArrowSquareOutIcon from 'phosphor-svelte/lib/ArrowSquareOutIcon';
 
 	import { SiBun, SiSvelte, SiHono, SiDeno } from '@icons-pack/svelte-simple-icons';
+
 </script>
 
 <div class="{cols} w-full bg-base-200 p-4">
