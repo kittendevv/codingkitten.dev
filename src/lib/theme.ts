@@ -1,7 +1,7 @@
 import { browser } from '$app/environment';
 
-const DARK_THEME = 'synthwave';
-const LIGHT_THEME = 'synthwave-light';
+const DARK_THEME = 'voodoo-grape-dark';
+const LIGHT_THEME = 'voodoo-grape-light';
 
 const STORAGE_KEY = 'theme';
 

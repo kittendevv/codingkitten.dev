@@ -1,56 +1,73 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@plugin "daisyui";
 
-@plugin 'daisyui' {
-	themes: synthwave --prefersdark --default;
+@plugin "daisyui/theme" {
+  name: "voodoo-grape-light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: #EFE2CC;
+  --color-base-200: #E4D4B9;
+  --color-base-300: #D6C3A3;
+  --color-base-content: #2B1B2E;
+  --color-primary: #C455EB;
+  --color-primary-content: #1C1120;
+  --color-secondary: #B3243A;
+  --color-secondary-content: #FFF4DD;
+  --color-accent: #DC6842;
+  --color-accent-content: #1C1120;
+  --color-neutral: #442B48;
+  --color-neutral-content: #F3E6D0;
+  --color-info: #14A8A5;
+  --color-info-content: #1C1120;
+  --color-success: #3BC84A;
+  --color-success-content: #1C1120;
+  --color-warning: #EDB544;
+  --color-warning-content: #1C1120;
+  --color-error: #823012;
+  --color-error-content: #FFE4AB;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
-@plugin 'daisyui/theme' {
-	name: 'synthwave-light';
-	default: false;
-	prefersdark: false;
-	color-scheme: 'light';
-
-	/* 🌅 Base: keep the purple, just much lighter */
-	--color-base-100: oklch(92% 0.06 281.288);
-	--color-base-200: oklch(88% 0.07 281.288);
-	--color-base-300: oklch(84% 0.08 281.288);
-	--color-base-content: oklch(22% 0.1 274.713);
-
-	/* 🎆 Neon colors: keep them punchy */
-	--color-primary: oklch(68% 0.24 349.761);
-	--color-primary-content: oklch(98% 0.01 0);
-
-	--color-secondary: oklch(75% 0.16 230.318);
-	--color-secondary-content: oklch(20% 0.05 240);
-
-	--color-accent: oklch(78% 0.22 55.934);
-	--color-accent-content: oklch(20% 0.06 40);
-
-	/* 🪩 Neutral: still purple, not gray */
-	--color-neutral: oklch(80% 0.1 277.023);
-	--color-neutral-content: oklch(22% 0.08 274.039);
-
-	/* Status (slightly vivid, not muted) */
-	--color-info: oklch(70% 0.16 232.661);
-	--color-info-content: oklch(98% 0.01 240);
-
-	--color-success: oklch(72% 0.16 181.912);
-	--color-success-content: oklch(20% 0.05 190);
-
-	--color-warning: oklch(88% 0.18 98.111);
-	--color-warning-content: oklch(30% 0.08 60);
-
-	--color-error: oklch(70% 0.16 32.639);
-	--color-error-content: oklch(98% 0.01 0);
-
-	/* Shape stays the same */
-	--radius-selector: 1rem;
-	--radius-field: 0.5rem;
-	--radius-box: 1rem;
-	--size-selector: 0.25rem;
-	--size-field: 0.25rem;
-	--border: 1px;
-	--depth: 0;
-	--noise: 0;
+@plugin "daisyui/theme" {
+  name: "voodoo-grape-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: #221624;
+  --color-base-200: #301E32;
+  --color-base-300: #442B48;
+  --color-base-content: #FFECC4;
+  --color-primary: #DB6CFF;
+  --color-primary-content: #221624;
+  --color-secondary: #C5283D;
+  --color-secondary-content: #FFECC4;
+  --color-accent: #E9724C;
+  --color-accent-content: #221624;
+  --color-neutral: #3d2b4a;
+  --color-neutral-content: #ffffff;
+  --color-info: #17BEBB;
+  --color-info-content: #221624;
+  --color-success: #4EEC5C;
+  --color-success-content: #221624;
+  --color-warning: #FFC857;
+  --color-warning-content: #221624;
+  --color-error: #823012;
+  --color-error-content: #FFE4AB;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
