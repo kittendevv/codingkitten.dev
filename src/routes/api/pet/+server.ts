@@ -4,8 +4,8 @@ import type { RequestHandler } from './$types';
 const KEY = 'pets';
 
 function getKV(platform: App.Platform | undefined) {
-	const kv = platform?.env?.PETCOUNT.pets;
-	if (!kv) error(500, 'KV binding PET_KV not available');
+	const kv = platform?.env?.PETCOUNT;
+	if (!kv) error(500, 'KV binding PETCOUNT not available');
 	return kv;
 }
 
