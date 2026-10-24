@@ -8,10 +8,9 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 		interface Platform {
-			env: {
-				UPSTASH_REDIS_REST_URL: string;
-				UPSTASH_REDIS_REST_TOKEN: string;
-			};
+		    env: {
+					PETCOUNT: KVNamespace;
+				};
 			context: {
 				waitUntil(promise: Promise<any>): void;
 			};

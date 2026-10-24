@@ -8,6 +8,9 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
+	"kv_namespaces": [
+		{ "binding": "PETCOUNT", "id": "dc82a90a761f41bfa8e2e8a311c49eb9" }
+	],
 	"observability": {
 		"enabled": true
 	}

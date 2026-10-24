@@ -1,27 +1,23 @@
-import { Redis } from '@upstash/redis';
+import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-function getRedis(platform: App.Platform | undefined) {
-	if (!platform) {
-		return new Redis({
-			url: process.env.UPSTASH_REDIS_REST_URL!,
-			token: process.env.UPSTASH_REDIS_REST_TOKEN!
-		});
-	}
-	return new Redis({
-		url: platform.env.UPSTASH_REDIS_REST_URL,
-		token: platform.env.UPSTASH_REDIS_REST_TOKEN
-	});
+const KEY = 'pets';
+
+function getKV(platform: App.Platform | undefined) {
+	const kv = platform?.env?.PETCOUNT.pets;
+	if (!kv) error(500, 'KV binding PET_KV not available');
+	return kv;
 }
 
 export const GET: RequestHandler = async ({ platform }) => {
-	const redis = getRedis(platform);
-	const count = (await redis.get<number>('petCount')) ?? 0;
+	const kv = getKV(platform);
+	const count = Number(await kv.get(KEY)) || 0;
 	return Response.json({ count });
 };
 
 export const POST: RequestHandler = async ({ platform }) => {
-	const redis = getRedis(platform);
-	const count = await redis.incr('petCount');
+	const kv = getKV(platform);
+	const count = (Number(await kv.get(KEY)) || 0) + 1;
+	await kv.put(KEY, String(count));
 	return Response.json({ count });
 };
