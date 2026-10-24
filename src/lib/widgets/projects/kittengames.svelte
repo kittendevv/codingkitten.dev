@@ -6,7 +6,7 @@
 	import { SiNextdotjs, SiNodedotjs, SiCaddy } from '@icons-pack/svelte-simple-icons';
 </script>
 
-<div class="{cols} w-full rounded-2xl bg-base-200 p-4 text-center">
+<div class="{cols} w-full bg-base-200 p-4 text-center">
 	<!-- Top Row, title, stats, tech -->
 	<div class="flex items-center">
 		<!-- Title -->
@@ -20,15 +20,15 @@
 		<!-- Stats -->
 		<div class="ml-auto flex items-center">
 			<!-- Tech Cards -->
-			<div class="ml-2 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-2 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiNextdotjs size={18} />
 				<h2 class="ml-1 text-xl font-medium">Next.js</h2>
 			</div>
-			<div class="ml-1 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-1 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiNodedotjs size={18} />
 				<h2 class="ml-1 text-xl font-medium">Node.js</h2>
 			</div>
-			<div class="ml-1 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-1 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiCaddy size={18} />
 				<h2 class="ml-1 text-xl font-medium">Caddy</h2>
 			</div>
@@ -39,6 +39,6 @@
 		<div class="col-span-1 md:col-span-2">
 			<p class="mt-4 h-full w-full text-left font-['Space_Grotesk_Variable'] text-xl">A classic web developer project (atleast I think so), my very own games website. During the few years I kept it up it became the #1 unblocked games website in my entire school.</p>
 		</div>
-		<img src="images/kittengames.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 rounded-lg shadow-sm shadow-base-300 md:col-span-3" />
+		<img src="images/kittengames.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 md:col-span-3" />
 	</div>
 </div>

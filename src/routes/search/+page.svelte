@@ -30,8 +30,7 @@
 			</p>
 		{:else if data.query === 'dante'}
 			<img src="/images/dante.jpeg" alt="dante (cat)" class="col-span-2" />
-		{:else if data.query === 'cat'}
-			<img src="https://cataas.com/cat?height=600" alt="random cat" class="col-span-2 mx-auto" />
+
 		{:else if data.query === 'caffeine'}
 			<p class="col-span-2 text-center text-4xl text-base-content">
 				Did I drink caffeine test

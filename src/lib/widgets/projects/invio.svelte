@@ -12,7 +12,7 @@
 	import { SiBun, SiSvelte, SiHono, SiDeno } from '@icons-pack/svelte-simple-icons';
 </script>
 
-<div class="{cols} w-full rounded-2xl bg-base-200 p-4">
+<div class="{cols} w-full bg-base-200 p-4">
 	<!-- Top Row, title, stats, tech -->
 	<div class="flex items-center">
 		<!-- Title -->
@@ -20,19 +20,19 @@
 		<!-- Stats -->
 		<div class="ml-auto flex items-center">
 			<!-- Tech Cards -->
-			<div class="ml-2 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-2 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiBun size={18} />
 				<h2 class="ml-1 text-xl font-medium">Bun</h2>
 			</div>
-			<div class="ml-1 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-1 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiSvelte size={18} />
 				<h2 class="ml-1 text-xl font-medium">Svelte</h2>
 			</div>
-			<div class="ml-1 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-1 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiDeno size={18} />
 				<h2 class="ml-1 text-xl font-medium">Deno</h2>
 			</div>
-			<div class="ml-1 flex items-center overflow-hidden rounded-md bg-base-300 px-3 py-1">
+			<div class="ml-1 flex items-center overflow-hidden bg-base-300 px-3 py-1">
 				<SiHono size={18} />
 				<h2 class="ml-1 text-xl font-medium">Hono</h2>
 			</div>
@@ -53,7 +53,7 @@
 				Invio is not meant to be a full bookkeeping solution. Just invoices, nothing else.
 			</p>
 		</div>
-		<img src="images/invio.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 rounded-lg shadow-sm shadow-base-300 md:col-span-3" />
+		<img src="images/invio.png" alt="Invio Dashboard Screenshot" class="col-span-1 mt-1 md:col-span-3" />
 	</div>
 	<div class="mt-2">
 		<a href="https://github.com/kittendevv/Invio" target="_blank" rel="noopener noreferrer external" class="btn btn-neutral">

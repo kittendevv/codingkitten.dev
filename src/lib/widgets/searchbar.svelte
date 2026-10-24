@@ -8,7 +8,7 @@
 	}
 </script>
 
-<div class="col-span-2 row-span-1 rounded-2xl bg-base-200">
+<div class="col-span-2 row-span-1 bg-base-200">
 	<div class="flex h-full items-center justify-center text-base-content" bind:clientHeight={containerHeight}>
 		<label class="input h-1/3 w-4/5 input-ghost">
 			<MagnifyingGlassIcon size={containerHeight / 6} weight="fill" />
